@@ -36,33 +36,35 @@ int Lomuto_partition(int *array, int low, int high, size_t size)
 	{
 		if (array[j] <= pivot_value)
 		{
-			swap(&array[i], &array[j]);
-			print_array(array, size);
+			swap(array, &array[i], &array[j], size);
 			i++;
 		}
 	}
 	if (high != low && array[high] != array[i])
 	{
-		swap(&array[i], &array[j]);
+		swap(array, &array[i], &array[j], size);
 	}
-	print_array(array, size);
 	return (i);
 }
 
 /**
  * swap - function that swap pointers value
+ * @array: list array given
  * @i: first pointer
  * @j: second pointer
+ * @size: size of the give array
  * Return: nothing
  */
 
-void swap(int *i, int *j)
+void swap(int *array, int *i, int *j, size_t size)
 {
 	int temp;
 
 	temp = *i;
 	*i = *j;
 	*j = temp;
+
+	print_array(array, size);
 }
 
 /**
