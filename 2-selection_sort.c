@@ -12,7 +12,7 @@ void selection_sort(int *array, size_t size)
 	size_t i, j, least_num;
 	int temp;
 
-	if (!array)
+	if (!array || size < 2)
 		return;
 
 	for (i = 0; i < size - 1; i++)
@@ -20,12 +20,12 @@ void selection_sort(int *array, size_t size)
 		least_num = i;
 		for (j = i + 1; j < size; j++)
 		{
-			if (array[i] > array[j])
+			if (array[j] < array[least_num])
 			{
 				least_num = j;
 			}
 		}
-		if (least_num != i)
+		if (array[least_num] != array[i] || least_num != i)
 		{
 			temp = array[i];
 			array[i] = array[least_num];
