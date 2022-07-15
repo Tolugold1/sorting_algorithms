@@ -24,5 +24,15 @@ void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 
+/* quick sort process function portotype */
+
+int Lomuto_partition(int *array, int low, int high, size_t size);
+void swap(int *array, int *i, int *j, size_t size);
+void quicksort_recurssion(int *array, int low, int high, size_t size);
+
+/* merge sorting process function prototype */
+void merge_sort(int *array, size_t size);
+void merge_sort_recurrsion(int *array, int *temp, int left, int right);
+void merge_sort_array(int *array, int *temp, int left, int middle, int right);
 
 #endif
